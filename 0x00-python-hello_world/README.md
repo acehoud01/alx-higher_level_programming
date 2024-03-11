@@ -19,4 +19,3 @@ To run any Python script, ensure you have Python installed on your system. You c
 Example:
 ```bash
 python 0-printing/print_hello.py
-
