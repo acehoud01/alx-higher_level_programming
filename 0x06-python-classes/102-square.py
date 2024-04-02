@@ -33,7 +33,8 @@ class Square:
         return self.__size ** 2
 
     def __eq__(self, other):
-        """Check if the area of the instance is the same as the area of 'other'.
+        """Check if the area of the instance is
+        the same as the area of 'other'.
         """
         if isinstance(other, Square):
             return self.area() == other.area()
@@ -41,7 +42,8 @@ class Square:
             return False
 
     def __ne__(self, other):
-        """Check if the area of the instance is not the same as the area of 'other'.
+        """Check if the area of the instance is not the
+        same as the area of 'other'.
         """
         if isinstance(other, Square):
             return self.area() != other.area()
@@ -49,7 +51,8 @@ class Square:
             return False
 
     def __gt__(self, other):
-        """Check if the area of the instance is greater than the area of 'other'.
+        """Check if the area of the instance is greater
+        than the area of 'other'.
         """
         if isinstance(other, Square):
             return self.area() > other.area()
@@ -57,7 +60,8 @@ class Square:
             return False
 
     def __ge__(self, other):
-        """Check if the area of the instance is greater than or equal to the area of 'other'.
+        """Check if the area of the instance is greater than
+        or equal to the area of 'other'.
         """
         if isinstance(other, Square):
             return self.area() >= other.area()
@@ -73,7 +77,8 @@ class Square:
             return False
 
     def __le__(self, other):
-        """Check if the area of the instance is less than or equal to the area of 'other'.
+        """Check if the area of the instance is less than.
+        or equal to the area of 'other'.
         """
         if isinstance(other, Square):
             return self.area() <= other.area()
