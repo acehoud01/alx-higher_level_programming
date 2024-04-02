@@ -38,9 +38,7 @@ class Square:
             other (Square): Another square to compare the area with.
 
         Returns:
-            int: 1 if the area of this square is greater than the area of the other square,
-                 0 if they are equal,
-                -1 if the area of this square is less than the area of the other square.
+            int: 1 if the area of this squareZ
         """
         if not isinstance(other, Square):
             raise TypeError("other must be an instance of Square")
