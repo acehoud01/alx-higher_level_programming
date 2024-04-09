@@ -1,0 +1,44 @@
+The `matrix_mul` function tests
+=================================
+
+Importing and basic tests
+-------------------------
+
+Ensure the function is imported correctly:
+
+    >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Testing with correct matrices:
+
+    >>> matrix_mul([[1, 2]], [[3], [4]])
+    [[11]]
+
+Testing invalid inputs:
+
+    >>> matrix_mul(10, [[1, 2]])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list
+
+    >>> matrix_mul([[1, 2]], "Holberton")
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b must be a list
+
+    >>> matrix_mul([["a", "b"]], [[1], [2]])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a should contain only integers or floats
+
+    >>> matrix_mul([[1, 2]], [[1, 2], ["a", "b"]])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b should contain only integers or floats
+
+Matrix dimension mismatch:
+
+    >>> matrix_mul([[1, 2, 3]], [[1, 2]])
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a and m_b can't be multiplied
+
