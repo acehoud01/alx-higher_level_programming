@@ -1,0 +1,60 @@
+The `text_indentation` Function Tests
+======================================
+
+Documentation and Test Cases for `text_indentation`
+----------------------------------------------------
+
+Importing and using the `text_indentation` function
+----------------------------------------------------
+
+Ensure the `text_indentation` function is imported correctly:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Verifying Documentation Exists
+------------------------------
+
+- Checking for module documentation:
+
+    >>> module_doc = __import__("5-text_indentation").__doc__
+    >>> assert len(module_doc) > 0
+
+- Checking for function documentation:
+
+    >>> func_doc = __import__("5-text_indentation").text_indentation.__doc__
+    >>> assert len(func_doc) > 0
+
+Basic Functionality
+-------------------
+
+- Test with periods:
+
+    >>> text_indentation("Hello. My name is ChatGPT.")
+    Hello
+
+    My name is ChatGPT
+
+- Test with question marks:
+
+    >>> text_indentation("What is your name? Are you a robot?")
+    What is your name
+
+    Are you a robot
+
+- Test with colons:
+
+    >>> text_indentation("This is a list: apples, bananas, grapes.")
+    This is a list
+
+    apples, bananas, grapes
+
+Handling Errors
+---------------
+
+- Passing a non-string as text:
+
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
