@@ -1,0 +1,56 @@
+The `say_my_name` Function Tests
+================================
+
+Documentation and Test Cases for `say_my_name`
+----------------------------------------------
+
+Importing and using the `say_my_name` function
+----------------------------------------------
+
+Ensure the `say_my_name` function is imported correctly:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Verifying Documentation Exists
+-------------------------------
+
+- Checking for module documentation:
+
+    >>> module_doc = __import__("3-say_my_name").__doc__
+    >>> assert len(module_doc) > 0
+
+- Checking for function documentation:
+
+    >>> func_doc = __import__("3-say_my_name").say_my_name.__doc__
+    >>> assert len(func_doc) > 0
+
+Basic Functionality
+-------------------
+
+- Standard name announcement:
+
+    >>> say_my_name("John", "Doe")
+    My name is John Doe
+
+- First name only:
+
+    >>> say_my_name("John")
+    My name is John 
+
+Handling Errors
+---------------
+
+- Invalid first name type:
+
+    >>> say_my_name(123, "Doe")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+- Invalid last name type:
+
+    >>> say_my_name("John", 123)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
