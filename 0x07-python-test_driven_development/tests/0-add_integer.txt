@@ -1,0 +1,110 @@
+The `add_integer` Function Tests
+================================
+
+Documentation and Test Cases for `add_integer`
+----------------------------------------------
+
+Using the `add_integer` function
+--------------------------------
+
+This document is formatted using reStructuredText standards.
+Begin by importing the `add_integer` function from the `add_integer_module`:
+
+    >>> add_integer = __import__('add_integer_module').add_integer
+
+Verifying Documentation Exists
+-------------------------------
+
+- Module documentation check:
+
+    >>> module_doc = __import__("add_integer_module").__doc__
+    >>> assert len(module_doc) > 0
+    
+- Function documentation check:
+
+    >>> func_doc = __import__("add_integer_module").add_integer.__doc__
+    >>> assert len(func_doc) > 0
+         
+Basic Functionality
+-------------------
+
+- Simple addition:
+
+    >>> add_integer(1, 2)
+    3
+    
+Testing with Single and Default Arguments
+------------------------------------------
+
+- Single argument provision:
+
+    >>> add_integer(2)
+    100
+
+- Verifying default behavior with zero:
+
+    >>> add_integer(0)
+    98
+
+Negative and Positive Values
+----------------------------
+
+- Adding a positive to a negative:
+
+    >>> add_integer(2, -4)
+    -2 
+
+- Adding a negative to a positive:
+
+    >>> add_integer(-6, 8)
+    2
+
+Complex Calculations
+--------------------
+
+- Summing sequences:
+
+    >>> [add_integer(i, i ** 2) for i in range(6)]
+    [0, 2, 6, 12, 20, 30]
+
+Handling Floats and Special Cases
+---------------------------------
+
+- Floats rounding and negative sum:
+
+    >>> add_integer(100.3, -2)
+    98
+
+- Handling large float values:
+
+    >>> add_integer(1500.5)
+    1598
+
+- Float NaN should raise an error:
+
+    >>> add_integer(float('NaN'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+Error Handling for Invalid Inputs
+---------------------------------
+
+- String arguments should cause a TypeError:
+
+    >>> add_integer(4, "School")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+- `None` as an argument:
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+- Negative floats input:
+
+    >>> add_integer(-100.5, -10.8)
+    -110
