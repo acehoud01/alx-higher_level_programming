@@ -3,6 +3,7 @@
 0-read_file.py
 '''
 
+
 def read_file(filename=""):
     """
     Reads a text file (UTF-8 encoded) and prints its contents to stdout.
