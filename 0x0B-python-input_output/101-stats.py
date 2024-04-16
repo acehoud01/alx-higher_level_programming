@@ -1,10 +1,14 @@
 #!/usr/bin/python3
-"""Reads from standard input and computes metrics
+"""Reads from standard input and computes metrics.
 """
 
 
 def print_stats(size, status_codes):
-    """Print accumulated metrics
+    """Print accumulated metrics.
+
+    Args:
+        size (int): The accumulated read file size.
+        status_codes (dict): The accumulated count of status codes.
     """
     print("File size: {}".format(size))
     for key in sorted(status_codes):
