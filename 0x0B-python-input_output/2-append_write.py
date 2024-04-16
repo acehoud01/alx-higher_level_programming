@@ -4,7 +4,7 @@
 '''
 
 
-def append_file(filename="", text=""):
+def append_write(filename="", text=""):
     """
     Appends the end to a text file (UTF-8 encoded)
     """
