@@ -21,7 +21,7 @@ class Rectangle(Base):
             id (int, optional): An optional integer ID for the object.
             If not provided, a new unique ID is assigned. Defaults to None.
         """
-        super().__init__(id)  # Call Base class constructor with id
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
