@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+'''
+Module for Rectanle class
+'''
 
 from models.base import Base
 
