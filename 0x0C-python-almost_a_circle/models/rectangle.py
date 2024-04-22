@@ -19,7 +19,7 @@ class Rectangle(Base):
             x (int, optional): The x-coordinate of the rectangle.
             y (int, optional): The y-coordinate of the rectangle.
             id (int, optional): An optional integer ID for the object.
-                If not provided, a new unique ID is assigned. Defaults to None.
+            If not provided, a new unique ID is assigned. Defaults to None.
         """
         super().__init__(id)  # Call Base class constructor with id
 
@@ -115,3 +115,12 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """
+        Calculates and returns the area of the Rectangle instance.
+
+        Returns:
+            int: The area of the rectangle.
+        """
+        return self.width * self.height
