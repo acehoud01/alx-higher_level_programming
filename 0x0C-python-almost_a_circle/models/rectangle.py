@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-Module for Rectangle class
+Module for Rectangle Class
 '''
 
 from models.base import Base
@@ -19,9 +19,10 @@ class Rectangle(Base):
             x (int, optional): The x-coordinate of the rectangle.
             y (int, optional): The y-coordinate of the rectangle.
             id (int, optional): An optional integer ID for the object.
-            If not provided, a new unique ID is assigned. Defaults to None.
+                If not provided, a new unique ID is assigned. Defaults to None.
         """
-        super().__init__(id)
+        super().__init__(id)  # Call Base class constructor with id
+
         self.width = width
         self.height = height
         self.x = x
@@ -46,7 +47,7 @@ class Rectangle(Base):
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
-            raise ValueError("width must be greater than 0")
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -68,7 +69,7 @@ class Rectangle(Base):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
-            raise ValueError("height must be greater than 0")
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -84,10 +85,13 @@ class Rectangle(Base):
         Setter for the x attribute.
 
         Args:
-            value (int): The new value for the x-coordinate.
+            value (int): The new value for the x-coordinate. Raises an error
+                if not an integer greater than or equal to zero.
         """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -103,8 +107,11 @@ class Rectangle(Base):
         Setter for the y attribute.
 
         Args:
-            value (int): The new value for the y-coordinate.
+            value (int): The new value for the y-coordinate. Raises an error
+                if not an integer greater than or equal to zero.
         """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
