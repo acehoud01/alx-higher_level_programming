@@ -3,6 +3,7 @@
 Module for base class
 '''
 
+
 class Base:
     """Base class for managing id attribute and object count."""
 
