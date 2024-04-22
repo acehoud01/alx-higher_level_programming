@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+'''
+Module for base class
+'''
 
 class Base:
     """Base class for managing id attribute and object count."""
