@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-Module for Rectange class
+Module for Rectangle class
 '''
 
 from models.base import Base
@@ -21,7 +21,7 @@ class Rectangle(Base):
             id (int, optional): An optional integer ID for the object.
                 If not provided, a new unique ID is assigned. Defaults to None.
         """
-        super().__init__(id)  # Call Base class constructor with id
+        super().__init__(id)
 
         self.width = width
         self.height = height
@@ -70,7 +70,7 @@ class Rectangle(Base):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
-        self.__height = value
+        self.__width = value
 
     @property
     def x(self):
@@ -114,7 +114,7 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
-        self.__y = value
+        self.__x = value
 
     def area(self):
         """
@@ -130,13 +130,12 @@ class Rectangle(Base):
         Prints a string representation of the Rectangle instance using "#".
         This improved version considers x and y coordinates.
         """
-        # Print empty lines for the y-coordinate offset
+
         for _ in range(self.y):
             print()
 
-        # Print rows with spaces for the x-coordinate offset
         for row in range(self.height):
-            print(" " * self.x, end="")  # Print leading spaces based on x
+            print(" " * self.x, end="")
             print("#" * self.width)
 
     def __str__(self):
