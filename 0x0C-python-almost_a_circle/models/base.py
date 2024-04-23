@@ -5,7 +5,7 @@ import json
 
 
 class Base:
-    """Base class."""
+    """Base class managing id attribute in all future classes."""
 
     __nb_objects = 0
 
@@ -47,13 +47,10 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Return instance with all attributes already set."""
+        """Return an instance with all attributes set according to the dictionary."""
         if cls.__name__ == "Rectangle":
-            dummy_instance = cls(1, 1)
+            dummy = cls(1, 1)  # Dummy Rectangle with width=1, height=1
         elif cls.__name__ == "Square":
-            dummy_instance = cls(1)
-        else:
-            raise ValueError("Invalid class name")
-
-        dummy_instance.update(**dictionary)
-        return dummy_instance
+            dummy = cls(1)     # Dummy Square with size=1
+        dummy.update(**dictionary)
+        return dummy
