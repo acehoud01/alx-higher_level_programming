@@ -29,12 +29,11 @@ class Square(Rectangle):
             f"{self.width}"
         )
 
-    def update(self, *args, **kwargs):
-        """Update attributes with provided arguments."""
-        if args:
-            attrs = ["id", "size", "x", "y"]
-            for i, arg in enumerate(args):
-                setattr(self, attrs[i], arg)
-        else:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+    def to_dictionary(self):
+        """Return dictionary representation of Square."""
+        return {
+            'id': self.id,
+            'size': self.width,
+            'x': self.x,
+            'y': self.y
+        }
