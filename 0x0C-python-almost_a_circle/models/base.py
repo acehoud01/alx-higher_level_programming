@@ -1,24 +1,26 @@
 #!/usr/bin/python3
-'''
-Module for base class
-'''
+"""Base module."""
+
+import json
 
 
 class Base:
-    """Base class for managing id attribute and object count."""
+    """Base class."""
 
-    __nb_objects = 0  # Private class attribute for object count
+    __nb_objects = 0
 
     def __init__(self, id=None):
-        """
-        Initializes the Base class instance.
-
-        Args:
-            id (int, optional): An optional integer ID for the object.
-                If not provided, a new unique ID is assigned. Defaults to None.
-        """
+        """Initialize Base instance."""
         if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Return JSON string representation of list of dictionaries."""
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        else:
+            return json.dumps(list_dictionaries)
